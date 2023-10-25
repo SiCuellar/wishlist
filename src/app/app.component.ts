@@ -25,8 +25,6 @@ export class AppComponent {
   
   title = 'my wishlist';
 
-  // visableItems : WishItem[] = this.items;
-
   get visableItems() : WishItem[] {
     return this.items.filter(filters[this.listFilter]);
   };
@@ -36,21 +34,6 @@ export class AppComponent {
     this.newWishText = '';
   }
 
-  // Setting get visable Items above allows us to get rid of this method
-  // filterChanged(value: any) {
-    // if (value === '0') {
-    //   this.visableItems = this.items;
-    // } else if (value === '1') {
-    //   this.visableItems = this.items.filter(item => !item.isComplete)
-    // } else {
-    //   this.visableItems = this.items.filter(item => item.isComplete)
-    // }
-  // }
-
-  toggleItem(item : WishItem) {
-    item.isComplete = !item.isComplete;
-    console.log(item)
-  }
 
 }
 
