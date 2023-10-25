@@ -1,4 +1,4 @@
-<li>
+<li class="d-flex justify-content-between">
   <div class="form-check">
     <label class="form-check-label">
       <input 
@@ -8,5 +8,9 @@
         (click)="toggleFullfilled()" 
       > {{wishText}}
     </label>
+  </div>
+
+  <div>
+    <button type="button" class="btn-close" (click)="removeWish()">removes</button>
   </div>
 </li>

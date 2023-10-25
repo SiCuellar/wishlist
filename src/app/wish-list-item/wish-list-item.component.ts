@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { WishItem } from 'src/shared/models/wishItem';
+import events from './../../shared/services/EventService';
 
 @Component({
   selector: 'wish-list-item',
@@ -11,6 +12,10 @@ export class WishListItemComponent {
 
   @Input() fullfilled! : boolean;
   @Output() fullfilledChange = new EventEmitter<boolean>()
+
+  removeWish() {
+    events.emit('removeWish', this.wishText);
+  }
 
   toggleFullfilled() {
     this.fullfilled = !this.fullfilled;
