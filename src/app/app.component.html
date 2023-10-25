@@ -1,5 +1,29 @@
-<div>
-  <ul class="wish-list">
+<div class="container">
+  <div *ngIf="items.length === 0; else showItems">
+    There are no wishes to display
+  </div>
+
+  <ng-template #showItems>
+    <ul class="wish-list">
+      <li *ngFor="let item of items">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="checkbox" type="checkbox"> {{item.wishText}}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </ng-template>
+</div>
+
+
+<!-- <div class ="container">
+
+  <div *ngIf="items.length === 0">
+    There are no wishes to display
+  </div>
+  
+  <ul *ngIf="items.length > 0" class="wish-list">
     <li *ngFor="let item of items">
       <div class="form-check">
         <label class="form-check-label">
@@ -8,4 +32,8 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->
+
+
+
+<!-- Note you can NOT have multuple structural directives in the same element -->
